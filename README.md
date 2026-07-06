@@ -1,11 +1,11 @@
 # Scripts
 
-Utilitários em Python para interagir com dispositivos conectados ao gateway **ES2C-485** via Modbus TCP.
+Utilitários em Python para interagir com dispositivos conectados ao gateway **ES2C-RS485** via Modbus TCP.
 
 ## Requisitos
 
 - Python 3.9 ou superior
-- ES2C-485 configurado com **TCP/Modbus** habilitado no webserver
+- ES2C-RS485 configurado com **TCP/Modbus** habilitado no webserver
 - Acesso de rede ao IP do gateway (porta TCP padrão: **1101**)
 
 ## Instalação
@@ -20,7 +20,7 @@ pip install -r requirements.txt
 
 ### `relay_modbus.py`
 
-Controla o módulo de relés **LC Tech 2-way Relay** (Modbus RTU) através do gateway TCP do ES2C-485.
+Controla o módulo de relés **LC Tech 2-way Relay** (Modbus RTU) através do gateway TCP do ES2C-RS485.
 
 **Manual do módulo:** [LC Tech — documentação](http://www.chinalctech.com/m/view.php?aid=455)
 
@@ -52,7 +52,7 @@ python relay_modbus.py status
 
 | Opção         | Padrão           | Descrição                              |
 |---------------|------------------|----------------------------------------|
-| `--host`      | `192.168.15.130` | IP do ES2C-485                         |
+| `--host`      | `192.168.15.130` | IP do ES2C-RS485                       |
 | `--port`      | `1101`           | Porta TCP do gateway Modbus            |
 | `--device-id` | `255`            | Endereço Modbus do módulo LC Tech      |
 | `--timeout`   | `3.0`            | Timeout da conexão em segundos         |
@@ -76,7 +76,7 @@ python relay_modbus.py on --relay 1 --host 192.168.1.50
 
 ### Não conecta ao gateway
 
-- Confirme o IP e a porta **1101** do ES2C-485.
+- Confirme o IP e a porta **1101** do ES2C-RS485.
 - Verifique se **TCP/Modbus** está habilitado no webserver do dispositivo.
 - Teste conectividade de rede (`ping` ou `telnet` na porta 1101).
 
